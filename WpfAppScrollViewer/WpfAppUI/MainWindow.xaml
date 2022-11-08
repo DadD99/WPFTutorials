@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="346" Width="616">
     <Grid>
-        <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <ScrollViewer x:Name ="SrVMain"  VerticalScrollBarVisibility="Auto">
             <StackPanel>
                 <Button Content="DungDepTrai"></Button>
                 <Button Content="DungDepTrai"></Button>
