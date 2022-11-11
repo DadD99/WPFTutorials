@@ -23,6 +23,19 @@ namespace WpfAppUI
         public MainWindow()
         {
             InitializeComponent();
+            List<Person> persons = new List<Person>();
+            persons.Add(new Person() { Age = 21, Name="Xin Jinping"});
+            persons.Add(new Person() { Age = 22, Name = "Joe Biden" });
+            persons.Add(new Person() { Age = 23, Name = "Dung Le" });
+            this.DataContext = persons;
+
+
+
         }
+    }
+    public class Person
+    {
+        public int Age { get; set; }
+        public string Name { get; set; }
     }
 }

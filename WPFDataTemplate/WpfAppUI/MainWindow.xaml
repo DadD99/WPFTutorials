@@ -6,7 +6,68 @@
         xmlns:local="clr-namespace:WpfAppUI"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
+    <!--<Grid>
+        <ListBox x:Name="listBox1" ItemsSource="{Binding}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Border BorderThickness="1" BorderBrush="ForestGreen">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Grid.Column="0" 
+                                       Text="{Binding Path=Name}"
+                                       Background="LightBlue"></TextBlock>
+                            <TextBlock Grid.Column="1" 
+                                       Text=" Age: "
+                                       Background="LightBlue"></TextBlock>
+                            <TextBlock Grid.Column="2" 
+                                       Text="{Binding Path=Age}"
+                                       FontStyle="Italic"
+                                       FontWeight="Bold"></TextBlock>
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+    </Grid>-->
+    <Window.Resources>
+        <DataTemplate x:Key="personTemplate">
+            <Border 
+                BorderBrush="DarkSeaGreen" 
+                BorderThickness="1" 
+                Margin="2" 
+                Padding="5" 
+                Width="200"
+                CornerRadius="3">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="0" 
+                                       Text="{Binding Path=Name}"
+                                       Background="LightBlue"></TextBlock>
+                    <TextBlock Grid.Column="1" 
+                                       Text=" Age: "
+                                       Background="LightBlue"></TextBlock>
+                    <TextBlock Grid.Column="2" 
+                                       Text="{Binding Path=Age}"
+                                       FontStyle="Italic"
+                                       FontWeight="Bold"></TextBlock>
+                </Grid>
+            </Border>
+            <DataTemplate.Triggers>
+                <DataTrigger Binding="{Binding Path=Name}" Value="Joe Biden">
+                    <Setter Property="ListBoxItem.Foreground" Value="Red"></Setter>
+                </DataTrigger>
+            </DataTemplate.Triggers>
+        </DataTemplate>
+    </Window.Resources>
     <Grid>
-
+        <ListBox x:Name="listBox1" ItemsSource="{Binding}" ItemTemplate="{StaticResource personTemplate}"/>
     </Grid>
 </Window>
