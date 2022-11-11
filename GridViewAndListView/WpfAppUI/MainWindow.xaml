@@ -1,0 +1,31 @@
+﻿<Window x:Class="WpfAppUI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfAppUI"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <ListView Margin="10" Name ="listViewUsers">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Name" Width="40" DisplayMemberBinding="{Binding Name}"></GridViewColumn>
+                    <GridViewColumn Header="Age" Width="30" DisplayMemberBinding="{Binding Age}"></GridViewColumn>
+                    <GridViewColumn Header="Mail" Width="100" DisplayMemberBinding="{Binding Mail}"></GridViewColumn>
+                    <GridViewColumn Header="Sex" Width="30" DisplayMemberBinding="{Binding Sex}"></GridViewColumn>
+                </GridView>
+            </ListView.View>
+            <ListView.GroupStyle>
+                <GroupStyle>
+                    <GroupStyle.HeaderTemplate>
+                        <DataTemplate>
+                            <TextBlock FontWeight="Bold" FontSize="14" Text="{Binding Name}"></TextBlock>
+                        </DataTemplate>
+                    </GroupStyle.HeaderTemplate>
+                </GroupStyle>
+            </ListView.GroupStyle>
+        </ListView>
+
+    </Grid>
+</Window>
